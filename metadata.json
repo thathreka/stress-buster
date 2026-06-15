@@ -1,0 +1,6 @@
+{
+  "name": "Visual Effects Player",
+  "description": "A formal frontend application with customizable falling snowflakes and floating balloons visual effects.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

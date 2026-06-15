@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+.animate-snowflake {
+  animation: snowflake-fall var(--fall-duration, 5s) linear forwards;
+}
+
+.animate-balloon {
+  animation: balloon-rise var(--rise-duration, 5s) cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes snowflake-fall {
+  0% {
+    transform: translateY(-50px) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: var(--max-opacity, 0.85);
+  }
+  85% {
+    opacity: var(--max-opacity, 0.85);
+  }
+  100% {
+    transform: translateY(105vh) translateX(var(--sway-x, 40px)) rotate(var(--rotate-deg, 180deg));
+    opacity: 0;
+  }
+}
+
+@keyframes balloon-rise {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.9) rotate(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  85% {
+    transform: translateY(-50vh) translateX(calc(var(--sway-x, -50px) * 0.85)) scale(1.05) rotate(calc(var(--rotate-deg, 15deg) * 0.7));
+    opacity: 1;
+  }
+  92% {
+    /* Pop anticipation - expanding slightly */
+    transform: translateY(-53vh) translateX(var(--sway-x, -50px)) scale(1.22) rotate(var(--rotate-deg, 15deg));
+    opacity: 1;
+  }
+  97% {
+    /* Explode / Burst visual peak! */
+    transform: translateY(-54vh) translateX(var(--sway-x, -50px)) scale(1.4) rotate(var(--rotate-deg, 15deg));
+    opacity: 0.95;
+  }
+  100% {
+    /* Popped into nothingness */
+    transform: translateY(-54vh) translateX(var(--sway-x, -50px)) scale(0) rotate(var(--rotate-deg, 15deg));
+    opacity: 0;
+  }
+}
+
